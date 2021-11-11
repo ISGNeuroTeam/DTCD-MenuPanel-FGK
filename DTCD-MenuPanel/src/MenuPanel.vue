@@ -3,13 +3,13 @@
     <div class="home-group">
       <button class="btn icon-btn" @click="goToHomePage"><img :src="icons.homeSvg" /></button>
     </div>
-    <vl class="divider"/>
+    <vl class="divider" />
     <div class="title-group">
       <div class="title">{{ workspaceTitle }}</div>
     </div>
-    <vl class="divider"/>
+    <vl class="divider" />
     <div class="panels-group">
-      <button class="btn icon-btn"><img :src="icons.textSvg" @click="addEmptyCell"/></button>
+      <button class="btn icon-btn"><img :src="icons.textSvg" @click="addEmptyCell" /></button>
       <button class="btn icon-btn"><img :src="icons.schemeSvg" /></button>
       <button class="btn icon-btn"><img :src="icons.tableSvg" /></button>
       <button class="btn icon-btn"><img :src="icons.speedtestSvg" /></button>
@@ -37,13 +37,13 @@ export default {
     };
   },
   computed: {
-    workspaceTitle(){
-      return this.$root.workspaceSystem.currentConfiguration.title
-    }
+    workspaceTitle() {
+      return this.$root.workspaceSystem.currentConfiguration.title;
+    },
   },
   methods: {
-    addEmptyCell(){
-      this.$root.workspaceSystem.createEmptyCell()
+    addEmptyCell() {
+      if (this.editMode) this.$root.workspaceSystem.createEmptyCell();
     },
     goToHomePage() {
       this.$root.workspaceSystem.setDefaultConfiguration();
@@ -55,7 +55,7 @@ export default {
     acceptWorkspaceChanges() {
       this.editMode = false;
       this.$root.workspaceSystem.changeMode();
-      this.$root.workspaceSystem.saveConfiguration()
+      this.$root.workspaceSystem.saveConfiguration();
     },
     cancelWorkspaceChanges() {
       this.editMode = false;
