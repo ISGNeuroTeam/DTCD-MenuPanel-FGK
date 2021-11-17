@@ -38,7 +38,8 @@ export default {
   },
   computed: {
     workspaceTitle() {
-      return this.$root.workspaceSystem.currentConfiguration.title;
+      const config = this.$root.workspaceSystem.getPluginConfig();
+      return config.title;
     },
   },
   methods: {
