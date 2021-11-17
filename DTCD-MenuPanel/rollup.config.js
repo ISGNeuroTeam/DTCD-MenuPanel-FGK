@@ -3,7 +3,6 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import styles from 'rollup-plugin-styles';
 import replace from '@rollup/plugin-replace';
-import url from '@rollup/plugin-url';
 
 const watch = Boolean(process.env.ROLLUP_WATCH);
 
@@ -29,7 +28,6 @@ const plugins = [
     'process.env.NODE_ENV': JSON.stringify('production'),
     'process.env.VUE_ENV': JSON.stringify('browser'),
   }),
-  url(),
   styles({
     mode: 'inject',
     modules: true,
