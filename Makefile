@@ -25,7 +25,7 @@ DTCD_SDK_URL = $(DEV_STORAGE)/$(DTCD_SDK)/$(DTCD_SDK)-0.1.1-develop-0112.tar.gz
 
 .SILENT:
 
-COMPONENTS: sdk 
+COMPONENTS: sdk
 
 export ANNOUNCE_BODY
 
