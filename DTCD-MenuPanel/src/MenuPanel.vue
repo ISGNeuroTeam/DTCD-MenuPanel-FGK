@@ -129,13 +129,11 @@ export default {
   data() {
     return {
       editMode: false,
+      workspaceTitle: '',
     };
   },
-  computed: {
-    workspaceTitle() {
-      const config = this.$root.workspaceSystem.getPluginConfig();
-      return config.title;
-    },
+  mounted() {
+    this.workspaceTitle = this.$root.workspaceSystem.getPluginConfig().title;
   },
   methods: {
     addEmptyCell() {

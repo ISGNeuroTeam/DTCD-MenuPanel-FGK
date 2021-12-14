@@ -8,6 +8,9 @@ import {
 } from '../../DTCD-SDK/index';
 
 export class MenuPanel extends PanelPlugin {
+  #workspaceSystemInstance;
+  #vueComponent;
+
   static getRegistrationMeta() {
     return {
       type: 'panel',
@@ -25,8 +28,10 @@ export class MenuPanel extends PanelPlugin {
     const styleSystem = new StyleSystemAdapter();
     const workspaceSystem = new WorkspaceSystemAdapter();
 
+    this.#workspaceSystemInstance = this.getSystem('WorkspaceSystem');
+
     const VueJS = this.getDependence('Vue').default;
-    new VueJS({
+    const rootVueComponent = new VueJS({
       data: () => {
         return {
           guid,
@@ -38,5 +43,54 @@ export class MenuPanel extends PanelPlugin {
       },
       render: h => h(MenuPanelComponent),
     }).$mount(selector);
+
+    this.#vueComponent = rootVueComponent.$children[0];
+  }
+
+  setPluginConfig({ title, column }) {
+    this.#workspaceSystemInstance.changeConfigurationTitle(
+      this.#workspaceSystemInstance.currentWorkspaceID,
+      title
+    );
+    this.#workspaceSystemInstance.setColumn(column);
+    this.#vueComponent.workspaceTitle = title;
+  }
+
+  getPluginConfig() {
+    return {
+      title: this.#workspaceSystemInstance.currentWorkspaceTitle,
+      column: this.#workspaceSystemInstance.currentWorkspaceColumn,
+    };
+  }
+
+  setFormSettings(config) {
+    this.setPluginConfig(config);
+  }
+
+  getFormSettings() {
+    return {
+      fields: [
+        {
+          component: 'title',
+          propValue: 'Настройки рабочего стола',
+        },
+        {
+          component: 'text',
+          propName: 'title',
+          attrs: {
+            label: 'Укажите название рабочего стола',
+            required: true,
+          },
+        },
+        {
+          component: 'text',
+          propName: 'column',
+          attrs: {
+            type: 'number',
+            label: 'Укажите количество колонок',
+          },
+        },
+      ],
+    };
   }
 }
