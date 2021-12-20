@@ -1,59 +1,69 @@
-# MenuPanel
+# DTCD-MenuPanel
 
+Simple default menu panel plugin for [DTCD](https://github.com/ISGNeuroTeam/DTCD) application.
 
 ## Getting Started
 
+In order to use this plugin you need to download it, build and move build-file to _plugins_ folder on DTCD server.
+
 ### Prerequisites
 
+- [node.js](https://nodejs.org/en/) LTS version 14.x.x
+- [DTCD](https://github.com/ISGNeuroTeam/DTCD) v0.3.0
+- `make` utility
 
-### Installing
-
-
-```
-Give the example
-```
-
-And repeat
+### Building
 
 ```
-until finished
+make build
 ```
 
 ## Running the tests
 
-
-### Break down into end to end tests
-
-
 ```
-example
+make test
 ```
 
-### And coding style tests
-
+## Create build package
 
 ```
- example
+make pack
+```
+
+## Clear dependencies
+
+```
+make clean
 ```
 
 ## Deployment
 
+Use `make pack` to get a deployable tarball. Move it to plugins directory and unarchive it with the following commands:
+
+```
+tar -zxf DTCD-MenuPanel-*.tar.gz ./DTCD-MenuPanel
+```
 
 ## Built With
 
-* [rollup](https://rollupjs.org/guide/en/) - Builder
+- [DTCD-SDK](https://github.com/ISGNeuroTeam/DTCD-SDK) v0.1.2
+- [Rollup.js](https://rollupjs.org/guide/en/) - JavaScript project builder
 
 ## Contributing
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/ISGNeuroTeam/DTCD-MenuPanel/tags).
+
+Also you can see the [CHANGELOG](CHANGELOG.md) file.
 
 ## Authors
 
+- Sergey Belikov (sbelikov@isgneuro.com)
+- Konstantin Rozov (konstantin@isgneuro.com)
 
 ## License
 
-This project is licensed under the OT.PLATFORM license agreement - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the OT.PLATFORM license agreement - see the [LICENSE](LICENSE.md) file for details
 
 ## Acknowledgments
