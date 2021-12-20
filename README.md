@@ -1,6 +1,6 @@
-# DTCD-MenuPanel
+# DTCD-MenuPanel-FGK
 
-Simple default menu panel plugin for [DTCD](https://github.com/ISGNeuroTeam/DTCD) application.
+Implementation of menu panel plugin for "FGK" project of [DTCD](https://github.com/ISGNeuroTeam/DTCD) application.
 
 ## Getting Started
 
@@ -41,7 +41,7 @@ make clean
 Use `make pack` to get a deployable tarball. Move it to plugins directory and unarchive it with the following commands:
 
 ```
-tar -zxf DTCD-MenuPanel-*.tar.gz ./DTCD-MenuPanel
+tar -zxf DTCD-MenuPanel-FGK-*.tar.gz ./DTCD-MenuPanel-FGK
 ```
 
 ## Built With
@@ -53,7 +53,7 @@ tar -zxf DTCD-MenuPanel-*.tar.gz ./DTCD-MenuPanel
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/ISGNeuroTeam/DTCD-MenuPanel/tags).
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/ISGNeuroTeam/DTCD-MenuPanel-FGK/tags).
 
 Also you can see the [CHANGELOG](CHANGELOG.md) file.
 
@@ -61,6 +61,7 @@ Also you can see the [CHANGELOG](CHANGELOG.md) file.
 
 - Sergey Belikov (sbelikov@isgneuro.com)
 - Konstantin Rozov (konstantin@isgneuro.com)
+- Roman Kuramshin (rkuramshin@isgneuro.com)
 
 ## License
 
