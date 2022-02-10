@@ -26,7 +26,7 @@ export class MenuPanel extends PanelPlugin {
   constructor(guid, selector) {
     super();
 
-    const eventSystem = new EventSystemAdapter('0.2.0', guid);
+    const eventSystem = new EventSystemAdapter('0.3.0', guid);
     const styleSystem = new StyleSystemAdapter('0.2.0');
     const workspaceSystem = new WorkspaceSystemAdapter('0.3.0');
 
