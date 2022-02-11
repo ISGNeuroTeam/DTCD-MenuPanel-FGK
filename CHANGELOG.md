@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - build process in order to make directory name with current version of pluing
+- StyleSystemAdapter version to `0.3.1`
 
 ## [0.2.1]
 
