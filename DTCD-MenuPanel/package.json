@@ -1,6 +1,6 @@
 {
   "name": "dtcd-menu-panel-fgk",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "scripts": {
     "test": "jest",
     "dev": "rollup -cw",

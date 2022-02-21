@@ -26,11 +26,11 @@ export class MenuPanel extends PanelPlugin {
   constructor(guid, selector) {
     super();
 
-    const eventSystem = new EventSystemAdapter('0.3.0', guid);
-    const styleSystem = new StyleSystemAdapter('0.3.1');
-    const workspaceSystem = new WorkspaceSystemAdapter('0.3.0');
+    const eventSystem = new EventSystemAdapter('0.4.0', guid);
+    const styleSystem = new StyleSystemAdapter('0.4.0');
+    const workspaceSystem = new WorkspaceSystemAdapter('0.4.0');
 
-    this.#workspaceSystemInstance = this.getSystem('WorkspaceSystem', '0.3.0');
+    this.#workspaceSystemInstance = this.getSystem('WorkspaceSystem', '0.4.0');
 
     const VueJS = this.getDependence('Vue').default;
     const rootVueComponent = new VueJS({
