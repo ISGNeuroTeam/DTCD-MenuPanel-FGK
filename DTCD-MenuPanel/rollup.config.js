@@ -1,4 +1,5 @@
 import vue from 'rollup-plugin-vue';
+import json from '@rollup/plugin-json';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import styles from 'rollup-plugin-styles';
@@ -6,9 +7,11 @@ import replace from '@rollup/plugin-replace';
 
 const watch = Boolean(process.env.ROLLUP_WATCH);
 
+import { version } from './package.json';
+
 const pluginName = 'MenuPanel';
 const fileDest = watch
-  ? `./../../DTCD/server/plugins/DTCD-${pluginName}/${pluginName}.js`
+  ? `./../../DTCD/server/plugins/DTCD-${pluginName}_${version}/${pluginName}.js`
   : `./build/${pluginName}.js`;
 
 const plugins = [
@@ -32,6 +35,7 @@ const plugins = [
     mode: 'inject',
     modules: true,
   }),
+  json(),
 ];
 
 export default {

@@ -1,5 +1,7 @@
 import MenuPanelComponent from './MenuPanel.vue';
 
+import { version } from './../package.json';
+
 import {
   PanelPlugin,
   EventSystemAdapter,
@@ -16,7 +18,7 @@ export class MenuPanel extends PanelPlugin {
       type: 'panel',
       name: 'MenuPanel',
       title: 'Панель меню',
-      version: '0.1.0',
+      version,
       withDependencies: true,
     };
   }
@@ -24,11 +26,11 @@ export class MenuPanel extends PanelPlugin {
   constructor(guid, selector) {
     super();
 
-    const eventSystem = new EventSystemAdapter(guid);
-    const styleSystem = new StyleSystemAdapter();
-    const workspaceSystem = new WorkspaceSystemAdapter();
+    const eventSystem = new EventSystemAdapter('0.4.0', guid);
+    const styleSystem = new StyleSystemAdapter('0.4.0');
+    const workspaceSystem = new WorkspaceSystemAdapter('0.4.0');
 
-    this.#workspaceSystemInstance = this.getSystem('WorkspaceSystem');
+    this.#workspaceSystemInstance = this.getSystem('WorkspaceSystem', '0.4.0');
 
     const VueJS = this.getDependence('Vue').default;
     const rootVueComponent = new VueJS({
