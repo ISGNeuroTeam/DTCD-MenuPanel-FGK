@@ -140,7 +140,7 @@ export default {
       if (this.editMode) this.$root.workspaceSystem.createEmptyCell();
     },
     goToHomePage() {
-      this.$root.workspaceSystem.setDefaultConfiguration();
+      this.$root.router.navigate('/workspaces');
     },
     toWorkspaceEditMode() {
       this.editMode = !this.editMode;

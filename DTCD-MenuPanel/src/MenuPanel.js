@@ -7,6 +7,7 @@ import {
   EventSystemAdapter,
   StyleSystemAdapter,
   WorkspaceSystemAdapter,
+  RouteSystemAdapter,
 } from '../../DTCD-SDK/index';
 
 export class MenuPanel extends PanelPlugin {
@@ -29,6 +30,7 @@ export class MenuPanel extends PanelPlugin {
     const eventSystem = new EventSystemAdapter('0.4.0', guid);
     const styleSystem = new StyleSystemAdapter('0.4.0');
     const workspaceSystem = new WorkspaceSystemAdapter('0.4.0');
+    const router = new RouteSystemAdapter('0.1.0');
 
     this.#workspaceSystemInstance = this.getSystem('WorkspaceSystem', '0.4.0');
 
@@ -40,6 +42,7 @@ export class MenuPanel extends PanelPlugin {
           eventSystem,
           styleSystem,
           workspaceSystem,
+          router,
           plugin: this,
         };
       },
